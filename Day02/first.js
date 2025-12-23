@@ -58,3 +58,43 @@ let arr5 = ["Rohit", 10, "Monu", true];
 arr5.push(true);
 // ++++++ tuples +++++++++
 const tuple = ["Monu", 10, 30];
+// ++++++ Objects +++++++++++
+let obj = {
+    name: "Rohit",
+    age: 20,
+    gender: "female",
+}; // obj pe hover kre wo automatically le liya
+// +++++++++ or we can write ++++++++++++
+// inline
+let obj2 = {
+    name: "Rohit",
+    age: 20,
+    gender: "female",
+};
+// +++ we can create also like this ++++++++++++
+let person;
+person = {
+    name: "Monu",
+    age: 21,
+    balance: 10,
+};
+let c1 = {
+    name: "Rohit",
+    age: 20,
+    id: "fer34",
+};
+let obj3 = {
+    name: "Rohit",
+    age: 12,
+    position: "Manager",
+};
+let s1 = {
+    name: "Rohit",
+    age: 20,
+    rollNo: 101,
+    course: "BCA",
+};
+console.log(s1.name);
+console.log(s1.course);
+// Note: ❌ Koi property missing hui to TypeScript error dega
+// Note: Aisa hm type ke sath nhi kr skte hai islye interface jyada preferred krte hai.

@@ -77,3 +77,79 @@ arr5.push(true);
 
 // ++++++ tuples +++++++++
 const tuple: [string, number, number] = ["Monu", 10, 30];
+
+// ++++++ Objects +++++++++++
+let obj = {
+  name: "Rohit",
+  age: 20,
+  gender: "female",
+}; // obj pe hover kre wo automatically le liya
+
+// +++++++++ or we can write ++++++++++++
+// inline
+let obj2: { name: string; age: number; gender: string } = {
+  name: "Rohit",
+  age: 20,
+  gender: "female",
+};
+
+// +++ we can create also like this ++++++++++++
+let person: { name: string; age: number; balance: number };
+
+person = {
+  name: "Monu",
+  age: 21,
+  balance: 10,
+};
+
+// +++++ Using Type Alises (object) +++++
+type customer = {
+  name: string;
+  age: number;
+  id: string;
+};
+
+let c1: customer = {
+  name: "Rohit",
+  age: 20,
+  id: "fer34",
+};
+
+// +++ using interface ++++++++
+interface admin {
+  name: string;
+  age: number;
+  position: string;
+}
+
+let obj3: admin = {
+  name: "Rohit",
+  age: 12,
+  position: "Manager",
+};
+
+// More prefered interface why?
+// Because hm isko badha skte hai, agr baad me kuch extra add krna ho like fatherName etc
+// EX:--> (Merging interface)
+interface Person1 {
+  name: string;
+  age: number;
+}
+
+interface Person1 {
+  rollNo: number;
+  course: string;
+}
+
+let s1: Person1= {
+  name: "Rohit",
+  age: 20,
+  rollNo: 101,
+  course: "BCA",
+};
+
+console.log(s1.name);
+console.log(s1.course);
+
+// Note: ❌ Koi property missing hui to TypeScript error dega
+// Note: Aisa hm type ke sath nhi kr skte hai islye interface jyada preferred krte hai.
