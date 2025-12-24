@@ -194,3 +194,22 @@ function total(...arr: number[]) {
   console.log(ans);
 }
 total(2, 3, 4, 4, 3, 2, 4, 6);
+
+// extend keyword
+
+interface human {
+  name: string;
+  age: number;
+}
+
+interface Teacher extends human {
+  salary: string;
+  id: number;
+}
+
+const obj5: Teacher = {
+  name: "santosh",
+  age: 32,
+  salary: "30k",
+  id: 1432,
+};
