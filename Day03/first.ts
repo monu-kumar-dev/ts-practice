@@ -109,3 +109,88 @@ const obj2: Readonly<customer> = {
   age: 23,
 };
 // obj2.name = "Mohit"; // error
+
+// ++++ Array of objects +++++++++
+
+const arr: { name: string; age: number }[] = [
+  { name: "Rohit", age: 20 },
+  { name: "Monu", age: 21 },
+];
+
+//  Or we can write
+interface people {
+  name: string;
+  age: number;
+}
+const arr2: people[] = [
+  { name: "Rohit", age: 20 },
+  { name: "Monu", age: 21 },
+];
+
+// +++++++++ Function in TS ++++++++
+
+function greet(a: number): number {
+  console.log(a);
+  return a + 5;
+}
+
+console.log(greet(10));
+
+function meet(msg: string, val: number): void {
+  console.log(msg, val);
+}
+
+meet("Monu", 12);
+
+// default parameter
+function neet(msg: string = "Jit") {
+  console.log(msg);
+}
+neet();
+neet("Bittu");
+
+// Optional parameter
+function Gate(person?: string) {
+  console.log(person || "Mohan");
+}
+Gate("Rohit");
+Gate();
+
+// arrow function :--->
+
+const sum = (a: number, b: number): number => {
+  return a + b;
+};
+
+console.log(sum(6, 5));
+
+// callback function
+
+function placeOrder(order: number, callback: (amount: number) => void): void {
+  const amount: number = order + 10;
+  callback(amount);
+}
+placeOrder(10, (amount) => {
+  console.log(amount);
+});
+
+// Or we can write:-->
+type chill = (amount: number) => void;
+function placeOrder2(order: number, callback: chill) {
+  const amount = order + 10;
+  callback(amount);
+}
+placeOrder2(10, (amount) => {
+  console.log(amount);
+});
+
+// rest Parameter
+
+function total(...arr: number[]) {
+  let ans: number = 0;
+  arr.forEach((val: number) => {
+    ans = ans + val;
+  });
+  console.log(ans);
+}
+total(2, 3, 4, 4, 3, 2, 4, 6);
