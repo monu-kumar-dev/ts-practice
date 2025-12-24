@@ -63,4 +63,45 @@ class Employee extends Customer {
 const E1 = new Employee(420, "Monu", 20, 210);
 console.log(E1);
 console.log(E1.meet());
-console.log(E1.greet()); 
+console.log(E1.greet());
+
+// ++++++ generic: Template +++++++++++++
+// function value(
+//   a: number | string | number[] | boolean
+// ): number | string | number[] | boolean {
+//   return a;
+// }
+
+// short for line 68 to 73:-->
+function value<T>(a: T): T {
+  return a;
+}
+
+console.log(value(10));
+console.log(value("Monu"));
+console.log(value([10, 11, 12, 13]));
+console.log(true);
+console.log(value(["Monu", "Mohit", "Mohan"]));
+
+// Another example of template :------.
+
+interface Admin<T, U> {
+  name: string;
+  age: number;
+  aadhar: T;
+  salary: U;
+}
+
+const obj10: Admin<number, number> = {
+  name: "Rohit",
+  age: 20,
+  aadhar: 123,
+  salary: 60000,
+};
+
+const obj11: Admin<string, number> = {
+  name: "Rohit",
+  age: 20,
+  aadhar: "KPK9876",
+  salary: 60000,
+};
